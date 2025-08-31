@@ -15,16 +15,16 @@ USER jenkins
 
 # Install main plugins
 RUN jenkins-plugin-cli --plugins \
-    "blueocean:latest \
-     workflow-aggregator:latest \
-     git:latest \
-     github:latest \
-     pipeline-github-lib:latest \
-     docker-workflow:latest \
-     pipeline-stage-view:latest \
-     credentials-binding:latest \
-     ssh-agent:latest \
-     matrix-auth:latest \
-     ldap:latest \
-     email-ext:latest \
-     mailer:latest"
+    blueocean:latest \
+    workflow-aggregator:latest \
+    git:latest \
+    github:latest \
+    pipeline-github-lib:latest \
+    docker-workflow:latest \
+    pipeline-stage-view:latest \
+    credentials-binding:latest \
+    ssh-agent:latest \
+    matrix-auth:latest \
+    ldap:latest \
+    email-ext:latest \
+    mailer:latest

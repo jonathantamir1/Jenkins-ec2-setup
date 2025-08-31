@@ -3,9 +3,14 @@ services:
   jenkins:
     build: .
     container_name: jenkins
+    user: "1000:999"  # jenkins user:docker group
     ports:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - ./jenkins_home:/var/jenkins_home   # bind mount for persistence
-      - /var/run/docker.sock:/var/run/docker.sock # allow Jenkins to run Docker builds
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JENKINS_OPTS=--httpPort=8080
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    restart: unless-stopped
