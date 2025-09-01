@@ -14,10 +14,6 @@ services:
       - JENKINS_OPTS=--httpPort=8080
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     user: root
-    group_add:
-      - docker
-    networks:
-      - jenkins_network
 
 volumes:
   jenkins_home:
